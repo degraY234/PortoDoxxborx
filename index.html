@@ -12,7 +12,13 @@
       var t = localStorage.getItem('portfolio-theme');
       if (!t && matchMedia('(prefers-color-scheme: light)').matches) t = 'light';
       if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
-      var base = location.pathname.startsWith('/portfolio') ? '/portfolio/' : '/';
+      var p = location.pathname;
+      var base = '/';
+      if (p.indexOf('/portfolio') === 0) base = '/portfolio/';
+      else if (location.hostname.endsWith('github.io')) {
+        var seg = p.split('/').filter(Boolean)[0];
+        if (seg && !seg.includes('.')) base = '/' + seg + '/';
+      }
       var el = document.createElement('base');
       el.href = base;
       document.head.appendChild(el);
