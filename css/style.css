@@ -715,6 +715,16 @@ main { position: relative; z-index: 1; }
   font-weight: 500;
 }
 
+.timeline-story {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+  font-style: italic;
+  border-left: 3px solid var(--border-glow);
+  padding-left: 1rem;
+}
+
 .timeline-card ul {
   margin: 0;
   padding-left: 1.1rem;
