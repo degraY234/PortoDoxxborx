@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050508" id="meta-theme" />
+  <meta name="description" content="DoxxBorx — Developer & Owner LuxxBot. Mahasiswa Teknik Komputer dari Indonesia. Build · Code · Ship." />
+  <meta property="og:title" content="DoxxBorx — Portfolio" />
+  <meta property="og:description" content="Developer full-stack · LuxxBot · WhatsApp & Discord automation" />
+  <script>
+    (function () {
+      var t = localStorage.getItem('portfolio-theme');
+      if (!t && matchMedia('(prefers-color-scheme: light)').matches) t = 'light';
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      var base = location.pathname.startsWith('/portfolio') ? '/portfolio/' : '/';
+      var el = document.createElement('base');
+      el.href = base;
+      document.head.appendChild(el);
+    })();
+  </script>
+  <title>DoxxBorx — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="bg-mesh" aria-hidden="true">
+    <div class="mesh-orb mesh-1"></div>
+    <div class="mesh-orb mesh-2"></div>
+    <div class="mesh-orb mesh-3"></div>
+    <div class="grid-lines"></div>
+  </div>
+
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="nav-logo" href="#top" data-scroll>
+      <span class="logo-mark">DB</span>
+      <span class="logo-text">DoxxBorx</span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#about" data-scroll>Tentang</a>
+      <a href="#skills" data-scroll>Skill</a>
+      <a href="#experience" data-scroll>Pengalaman</a>
+      <a href="#certificates" data-scroll>Sertifikat</a>
+      <a href="#projects" data-scroll>Proyek</a>
+      <a href="#contact" data-scroll>Kontak</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Ganti tema">
+      <span class="icon-sun" aria-hidden="true">☀️</span>
+      <span class="icon-moon" aria-hidden="true">🌙</span>
+    </button>
+    <a class="nav-cta" href="#contact" data-scroll>Hubungi</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero section">
+      <div class="hero-content reveal">
+        <p class="eyebrow">
+          <span class="pulse-dot"></span>
+          Available for projects
+        </p>
+        <h1 class="hero-title">
+          <span class="line">Halo, aku</span>
+          <span class="line gradient-text">DoxxBorx</span>
+        </h1>
+        <p class="hero-role">Developer & Owner <strong>LuxxBot</strong></p>
+        <p class="hero-tagline">Build · Code · Ship</p>
+        <p class="hero-desc">
+          Mahasiswa <em>Teknik Komputer</em> dari Indonesia 🇮🇩 — membangun bot WhatsApp premium,
+          integrasi Discord, web streaming, dan tools AI yang dipakai ribuan user.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects" data-scroll>Lihat Proyek</a>
+          <a class="btn btn-ghost" href="#contact" data-scroll>Kontak Saya</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong data-count="75">0</strong><span>+ Perintah Bot</span>
+          </div>
+          <div class="stat">
+            <strong data-count="4">0</strong><span>Platform</span>
+          </div>
+          <div class="stat">
+            <strong data-count="19">0</strong><span>Tahun</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" data-delay="1">
+        <div class="photo-frame">
+          <div class="photo-ring"></div>
+          <div class="photo-ring photo-ring-2"></div>
+          <div class="photo-wrap">
+            <img
+              id="profile-photo"
+              src="img/profile.jpg"
+              alt="Foto DoxxBorx"
+              width="320"
+              height="320"
+              loading="eager"
+            />
+            <div class="photo-placeholder" id="photo-placeholder" hidden>
+              <span class="ph-icon">📸</span>
+              <span>Taruh fotomu di<br/><code>portfolio/img/profile.jpg</code></span>
+            </div>
+          </div>
+          <div class="photo-badge">
+            <span>👑</span> Creator LuxxBot
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee">
+        <span>Node.js</span><span>JavaScript</span><span>WhatsApp API</span><span>Discord.js</span>
+        <span>Express</span><span>AI Integration</span><span>WebRTC</span><span>PostgreSQL</span>
+        <span>LuxxBot</span><span>Full-Stack</span><span>Automation</span><span>UI Design</span>
+        <span>Node.js</span><span>JavaScript</span><span>WhatsApp API</span><span>Discord.js</span>
+        <span>Express</span><span>AI Integration</span><span>WebRTC</span><span>PostgreSQL</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="section-head reveal">
+        <span class="section-num">01</span>
+        <h2>Tentang Aku</h2>
+        <p>Siapa di balik kode & kopi ☕</p>
+      </div>
+      <div class="about-grid">
+        <article class="card about-card reveal">
+          <h3>Developer muda, visi besar</h3>
+          <p>
+            Aku <strong>DoxxBorx</strong> — mahasiswa Teknik Komputer berusia 19 tahun dari Indonesia.
+            Fokusku membangun produk digital yang <em>nyata dipakai orang</em>: dari bot WhatsApp 75+ fitur,
+            radio streaming, nonton bareng, sampai panel admin full-stack.
+          </p>
+          <p>
+            Bukan cuma nulis kode — aku desain pengalaman user, handle infrastruktur, dan ship fitur
+            baru terus. Satu orang, banyak platform. Itulah cara kerjaku.
+          </p>
+        </article>
+        <div class="about-facts reveal" data-delay="1">
+          <div class="fact">
+            <span class="fact-icon">🎓</span>
+            <div>
+              <strong>Pendidikan</strong>
+              <p>Mahasiswa Teknik Komputer</p>
+            </div>
+          </div>
+          <div class="fact">
+            <span class="fact-icon">📍</span>
+            <div>
+              <strong>Lokasi</strong>
+              <p>Indonesia 🇮🇩</p>
+            </div>
+          </div>
+          <div class="fact">
+            <span class="fact-icon">💼</span>
+            <div>
+              <strong>Role</strong>
+              <p>Developer & Owner LuxxBot</p>
+            </div>
+          </div>
+          <div class="fact">
+            <span class="fact-icon">⚡</span>
+            <div>
+              <strong>Motto</strong>
+              <p>Build · Code · Ship</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section skills" id="skills">
+      <div class="section-head reveal">
+        <span class="section-num">02</span>
+        <h2>Keahlian</h2>
+        <p>Stack yang aku kuasai & pakai tiap hari</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group card reveal">
+          <h3>🖥️ Backend & Bot</h3>
+          <div class="tags">
+            <span>Node.js</span><span>Express</span><span>Baileys</span><span>Discord.js</span>
+            <span>PM2</span><span>WebSocket</span><span>REST API</span>
+          </div>
+        </div>
+        <div class="skill-group card reveal" data-delay="1">
+          <h3>🧠 AI & Data</h3>
+          <div class="tags">
+            <span>LLM Integration</span><span>Prompt Engineering</span><span>SQL</span>
+            <span>Database Design</span><span>Scraping</span>
+          </div>
+        </div>
+        <div class="skill-group card reveal" data-delay="2">
+          <h3>🎨 Frontend & Media</h3>
+          <div class="tags">
+            <span>HTML/CSS/JS</span><span>Responsive UI</span><span>Canvas</span>
+            <span>FFmpeg</span><span>WebRTC</span><span>Streaming</span>
+          </div>
+        </div>
+        <div class="skill-bars card reveal" data-delay="3">
+          <h3>📊 Fokus Utama</h3>
+          <div class="bar-item">
+            <div class="bar-label"><span>Bot Development</span><span>95%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="95"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>Full-Stack Web</span><span>88%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="88"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>AI Integration</span><span>85%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>DevOps / Deploy</span><span>80%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section experience" id="experience">
+      <div class="section-head reveal">
+        <span class="section-num">03</span>
+        <h2>Pengalaman</h2>
+        <p>Perjalanan coding & project yang sudah aku jalani</p>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card card">
+            <span class="timeline-date">2025 — Sekarang</span>
+            <h3>Founder & Lead Developer · LuxxBot</h3>
+            <p class="timeline-org">LuxxBot Premium · Remote</p>
+            <ul>
+              <li>Membangun & maintain bot WhatsApp 75+ perintah multi-platform</li>
+              <li>Integrasi AI, Discord voice, radio streaming, Luxx Watch</li>
+              <li>Deploy production: PM2, Cloudflare tunnel, admin panel</li>
+              <li>Handle user support, update fitur, dan optimasi performa</li>
+            </ul>
+          </div>
+        </article>
+        <article class="timeline-item reveal" data-delay="1">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card card">
+            <span class="timeline-date">2024 — Sekarang</span>
+            <h3>Mahasiswa · Teknik Komputer</h3>
+            <p class="timeline-org">Perguruan Tinggi · Indonesia</p>
+            <ul>
+              <li>Fokus pemrograman, jaringan, dan sistem terdistribusi</li>
+              <li>Menerapkan teori kuliah ke project nyata (LuxxBot ecosystem)</li>
+              <li>Aktif eksplorasi full-stack, database, dan DevOps</li>
+            </ul>
+          </div>
+        </article>
+        <article class="timeline-item reveal" data-delay="2">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card card">
+            <span class="timeline-date">2024</span>
+            <h3>Freelance · Bot & Automation Developer</h3>
+            <p class="timeline-org">Independent · WhatsApp & Discord</p>
+            <ul>
+              <li>Custom bot untuk grup komunitas & bisnis kecil</li>
+              <li>Automasi download media, moderasi grup, dan fitur AI</li>
+              <li>Konsultasi arsitektur bot & deployment server</li>
+            </ul>
+          </div>
+        </article>
+        <article class="timeline-item reveal" data-delay="3">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card card">
+            <span class="timeline-date">2023</span>
+            <h3>Mulai Journey · Full-Stack Developer</h3>
+            <p class="timeline-org">Self-taught · Indonesia</p>
+            <ul>
+              <li>Belajar JavaScript, Node.js, dan REST API dari nol</li>
+              <li>Project pertama: bot WhatsApp sederhana → berkembang jadi LuxxBot</li>
+              <li>Eksplor frontend, database SQL, dan Git workflow</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="section certificates" id="certificates">
+      <div class="section-head reveal">
+        <span class="section-num">04</span>
+        <h2>Sertifikat & Pencapaian</h2>
+        <p>Bukti skill, project, dan pembelajaran yang sudah diselesaikan</p>
+      </div>
+      <div class="cert-grid">
+        <article class="cert-card reveal">
+          <div class="cert-icon">🏆</div>
+          <span class="cert-badge">Owner Project</span>
+          <h3>LuxxBot Full-Stack Platform</h3>
+          <p>Arsitektur & deploy bot WA + Discord + web (radio, watch, admin) production-ready.</p>
+          <span class="cert-year">2025</span>
+        </article>
+        <article class="cert-card reveal" data-delay="1">
+          <div class="cert-icon">💻</div>
+          <span class="cert-badge">Technical</span>
+          <h3>JavaScript & Node.js Mastery</h3>
+          <p>ES modules, async patterns, Express, Baileys, Discord.js — dipakai daily di LuxxBot.</p>
+          <span class="cert-year">2024</span>
+        </article>
+        <article class="cert-card reveal" data-delay="2">
+          <div class="cert-icon">🗄️</div>
+          <span class="cert-badge">Database</span>
+          <h3>Database Design & SQL</h3>
+          <p>Skema relasional, normalisasi, query kompleks — termasuk fitur !db generator.</p>
+          <span class="cert-year">2025</span>
+        </article>
+        <article class="cert-card reveal" data-delay="3">
+          <div class="cert-icon">🧠</div>
+          <span class="cert-badge">AI Integration</span>
+          <h3>LLM & Prompt Engineering</h3>
+          <p>Integrasi multi-model AI, persona system, context memory untuk chat bot.</p>
+          <span class="cert-year">2025</span>
+        </article>
+        <article class="cert-card reveal" data-delay="1">
+          <div class="cert-icon">🎨</div>
+          <span class="cert-badge">Frontend</span>
+          <h3>Modern Web UI Development</h3>
+          <p>Responsive design, animasi CSS, glassmorphism — Luxx Watch, Admin, Portfolio.</p>
+          <span class="cert-year">2025</span>
+        </article>
+        <article class="cert-card reveal" data-delay="2">
+          <div class="cert-icon">🚀</div>
+          <span class="cert-badge">DevOps</span>
+          <h3>Deploy & Server Management</h3>
+          <p>PM2, GitHub Actions, Cloudflare tunnel, GitHub Pages, monitoring production.</p>
+          <span class="cert-year">2025</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects">
+      <div class="section-head reveal">
+        <span class="section-num">05</span>
+        <h2>Proyek Unggulan</h2>
+        <p>Karya yang aku bangun & maintain sendiri</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card featured reveal">
+          <div class="project-glow"></div>
+          <span class="project-tag">⭐ Flagship</span>
+          <h3>LuxxBot</h3>
+          <p class="project-desc">
+            Bot WhatsApp premium multi-device dengan 75+ perintah: AI chat, musik & radio,
+            download media, stiker, games, cuaca, OCR, dan banyak lagi. Integrasi Discord voice
+            dengan slash commands.
+          </p>
+          <ul class="project-features">
+            <li>AI: !tanya !q !coding !db !buat !lihat</li>
+            <li>Musik W2G + radio streaming live</li>
+            <li>Luxx Watch — nonton bareng LK21</li>
+            <li>Admin panel + Cloudflare tunnel</li>
+          </ul>
+          <div class="project-tech">
+            <span>Node.js</span><span>Baileys</span><span>Discord.js</span><span>Express</span><span>AI</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-delay="1">
+          <span class="project-tag">📺 Web App</span>
+          <h3>Luxx Watch</h3>
+          <p class="project-desc">
+            Platform nonton bareng real-time — katalog film, chat live, voice chat browser,
+            sinkron playback antar penonton.
+          </p>
+          <div class="project-tech">
+            <span>WebRTC</span><span>Express</span><span>SSE</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-delay="2">
+          <span class="project-tag">🎛️ Dashboard</span>
+          <h3>LuxxBot Admin</h3>
+          <p class="project-desc">
+            Panel kontrol owner: monitor bot, radio queue, statistik, dan konfigurasi
+            real-time dari browser.
+          </p>
+          <div class="project-tech">
+            <span>REST API</span><span>GitHub Pages</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-delay="3">
+          <span class="project-tag">📻 Streaming</span>
+          <h3>LuxxBot Radio</h3>
+          <p class="project-desc">
+            Radio streaming 24/7 dengan antrian lagu YouTube, player web, dan integrasi
+            perintah !play !skip !queue.
+          </p>
+          <div class="project-tech">
+            <span>FFmpeg</span><span>yt-dlp</span><span>MP3 Stream</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="section-head reveal">
+        <span class="section-num">06</span>
+        <h2>Kontak</h2>
+        <p>Mau kolaborasi, custom bot, atau sekadar ngobrol?</p>
+      </div>
+      <div class="contact-grid reveal">
+        <a class="contact-card" href="https://wa.me/6282384961407" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">💬</span>
+          <strong>WhatsApp</strong>
+          <p>Chat langsung</p>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a class="contact-card" href="https://discord.gg/QJQVDfvx" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">🎧</span>
+          <strong>Discord</strong>
+          <p>DoxxBorx's Server</p>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a class="contact-card" href="https://github.com/doxxborx" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">🐙</span>
+          <strong>GitHub</strong>
+          <p>@doxxborx</p>
+          <span class="contact-arrow">→</span>
+        </a>
+      </div>
+      <div class="contact-cta card reveal" data-delay="1">
+        <h3>Siap bangun sesuatu yang keren?</h3>
+        <p>Custom bot, website, integrasi AI — let's talk.</p>
+        <a class="btn btn-primary" href="https://wa.me/6282384961407?text=Halo%20DoxxBorx%2C%20aku%20mau%20diskusi%20proyek" target="_blank" rel="noopener noreferrer">
+          Mulai Proyek →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <strong>DoxxBorx</strong> · Crafted with code & kopi ☕</p>
+    <p class="muted">LuxxBot v3.1 · <a href="https://doxxborx.dev" class="footer-link">doxxborx.dev</a></p>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
