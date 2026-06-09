@@ -27,23 +27,24 @@
   <title>DoxxBorx — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Orbitron:wght@500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <canvas id="network-canvas" class="network-canvas" aria-hidden="true"></canvas>
   <div class="grain" aria-hidden="true"></div>
   <div class="bg-mesh" aria-hidden="true">
     <div class="mesh-orb mesh-1"></div>
     <div class="mesh-orb mesh-2"></div>
     <div class="mesh-orb mesh-3"></div>
-    <div class="grid-lines"></div>
+    <div class="grid-lines robot-grid"></div>
   </div>
 
   <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
   <header class="nav" id="nav">
     <a class="nav-logo" href="#top" data-scroll>
-      <span class="logo-mark">DB</span>
+      <span class="logo-mark robot-mark">🤖</span>
       <span class="logo-text">DoxxBorx</span>
     </a>
     <nav class="nav-links" id="nav-links">
@@ -405,7 +406,7 @@
             dengan slash commands.
           </p>
           <ul class="project-features">
-            <li>AI: !tanya !q !coding !db !buat !lihat</li>
+            <li>AI: !tanya !q !coding !db !lihat</li>
             <li>Musik W2G + radio streaming live</li>
             <li>Luxx Watch — nonton bareng LK21</li>
             <li>Admin panel + Cloudflare tunnel</li>
@@ -439,7 +440,7 @@
           </div>
         </article>
 
-        <article class="project-card reveal" data-delay="3">
+        <article class="project-card reveal project-card-radio" data-delay="3">
           <span class="project-tag">📻 Streaming</span>
           <h3>LuxxBot Radio</h3>
           <p class="project-desc">
@@ -496,5 +497,6 @@
   </footer>
 
   <script src="js/app.js" defer></script>
+  <script src="js/network-bg.js" defer></script>
 </body>
 </html>

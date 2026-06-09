@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#030508" id="meta-theme" />
+  <meta name="description" content="LuxxBot Radio — dengar musik live dari antrian WhatsApp & Discord." />
+  <script>
+    (function () {
+      var t = localStorage.getItem('portfolio-theme');
+      if (!t && matchMedia('(prefers-color-scheme: light)').matches) t = 'light';
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      var p = location.pathname;
+      var base = '/';
+      if (p.indexOf('/portfolio') === 0) base = '/portfolio/';
+      else if (location.hostname.endsWith('github.io')) {
+        var seg = p.split('/').filter(Boolean)[0];
+        if (seg && !seg.includes('.')) base = '/' + seg + '/';
+      }
+      var el = document.createElement('base');
+      el.href = base;
+      document.head.appendChild(el);
+    })();
+  </script>
+  <title>LuxxBot Radio — DoxxBorx</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/radio.css" />
+</head>
+<body class="radio-page molecule-theme radio-dark">
+  <canvas id="network-canvas" class="network-canvas" aria-hidden="true"></canvas>
+  <div class="radio-scanline" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="bg-mesh" aria-hidden="true">
+    <div class="mesh-orb mesh-1"></div>
+    <div class="mesh-orb mesh-2"></div>
+    <div class="mesh-orb mesh-3"></div>
+    <div class="grid-lines robot-grid"></div>
+  </div>
+
+  <header class="nav scrolled" id="nav">
+    <a class="nav-logo" href="./">
+      <div class="luxx-robot luxx-robot-sm" id="nav-robot" aria-hidden="true">
+        <span class="luxx-robot-antenna"></span>
+        <div class="luxx-robot-face">
+          <span class="luxx-robot-eye"><span class="luxx-robot-pupil"></span></span>
+          <span class="luxx-robot-eye"><span class="luxx-robot-pupil"></span></span>
+        </div>
+      </div>
+      <span class="logo-text">LuxxBot Radio</span>
+    </a>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Ganti tema">
+      <span class="icon-sun" aria-hidden="true">☀️</span>
+      <span class="icon-moon" aria-hidden="true">🌙</span>
+    </button>
+  </header>
+
+  <main class="radio-wrap">
+    <div class="radio-frame reveal visible">
+      <div class="radio-panel">
+        <div class="radio-header">
+          <span class="radio-badge"><span class="live-dot"></span> Live Stream</span>
+          <a class="radio-back" href="./">← Portfolio</a>
+        </div>
+
+        <div class="radio-title-block">
+          <div class="radio-title-row">
+            <div class="luxx-robot luxx-robot-hero" id="hero-robot" aria-hidden="true">
+              <span class="luxx-robot-antenna"></span>
+              <div class="luxx-robot-face">
+                <span class="luxx-robot-eye"><span class="luxx-robot-pupil"></span></span>
+                <span class="luxx-robot-eye"><span class="luxx-robot-pupil"></span></span>
+              </div>
+              <span class="luxx-robot-mouth"></span>
+            </div>
+            <div>
+              <h1>LuxxBot Radio</h1>
+              <p>Live stream · sinkron !play WhatsApp & Discord</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="radio-art">
+          <div class="radio-thumb-wrap">
+            <img id="radio-thumb" src="" alt="" hidden />
+            <div class="radio-thumb-placeholder" id="radio-thumb-ph">🎵</div>
+          </div>
+          <div class="radio-track-info">
+            <p class="radio-track-title" id="track-title">Memuat...</p>
+            <p class="radio-track-artist" id="track-artist">—</p>
+            <p class="radio-track-requester" id="track-requester"></p>
+          </div>
+        </div>
+
+        <div class="wave-canvas-wrap">
+          <canvas id="wave-canvas"></canvas>
+          <div class="wave-overlay"></div>
+        </div>
+
+        <div class="radio-progress">
+          <div class="progress-track">
+            <div class="progress-fill" id="progress-fill"></div>
+            <div class="progress-glow" id="progress-glow"></div>
+          </div>
+          <div class="progress-times">
+            <span id="time-elapsed">0:00</span>
+            <span id="time-duration">0:00</span>
+          </div>
+        </div>
+
+        <p class="radio-status" id="radio-status" aria-live="polite"></p>
+
+        <div class="radio-controls">
+          <button class="radio-btn radio-btn-play" id="btn-play" type="button">
+            <span aria-hidden="true">▶</span> Putar
+          </button>
+          <button class="radio-btn" id="btn-skip" type="button">
+            <span aria-hidden="true">⏭</span> Skip
+          </button>
+          <button class="radio-btn radio-btn-stop" id="btn-stop" type="button">
+            <span aria-hidden="true">⏹</span> Stop
+          </button>
+        </div>
+
+        <div class="radio-lyrics">
+          <div class="radio-lyrics-head">
+            <h3>📝 Lirik</h3>
+            <span class="radio-lyrics-badge" id="lyrics-badge">—</span>
+          </div>
+          <div class="radio-lyrics-frame">
+            <p class="radio-lyrics-empty" id="lyrics-empty">Lirik muncul otomatis saat lagu diputar</p>
+            <div class="radio-lyrics-body" id="lyrics-body" hidden></div>
+          </div>
+          <div class="radio-lyrics-progress">
+            <div class="radio-lyrics-progress-fill" id="lyrics-progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="radio-queue">
+          <h3>Antrian (<span id="queue-count">0</span>)</h3>
+          <p class="radio-queue-empty" id="queue-empty">Antrian kosong</p>
+          <ol id="queue-list" hidden></ol>
+        </div>
+
+        <p class="radio-hint">
+          Tambah lagu via WhatsApp: <code>!play judul lagu</code> ·
+          Skip: <code>!skip</code> · Stop: <code>!stop</code> (owner)
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <audio id="radio-player" preload="none" autoplay="false" crossorigin="anonymous" playsinline></audio>
+
+  <script src="js/app.js" defer></script>
+  <script src="js/network-bg.js" defer></script>
+  <script src="js/radio.js?v=8" defer></script>
+</body>
+</html>
